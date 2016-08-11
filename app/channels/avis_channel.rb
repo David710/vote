@@ -9,7 +9,28 @@ class AvisChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    message = Message.create(text: data['message'])
-    ActionCable.server.broadcast 'avis', message: message.text
+    if Message.exists?(text: data['message'])
+      updated_message = Message.find_by(text: data['message'])
+      updated_message.size = updated_message.size + 1
+      updated_message.save
+    else
+      message = Message.create(text: data['message'], size: 1)
+      #ActionCable.server.broadcast 'avis', message: message.text
+    end
+
+    @messages = Message.all
+    puts @messages
+    list_message = []
+    @messages.each_with_index  do |message, index|
+      text_message = message.text
+      size_message = message.size
+      hash_message = {text: text_message, size: size_message}
+      puts hash_message
+      list_message << hash_message
+    end
+      puts list_message
+      puts list_message.class
+
+      ActionCable.server.broadcast 'avis', message: list_message.as_json
   end
 end

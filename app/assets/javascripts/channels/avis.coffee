@@ -12,7 +12,11 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    $('#messages').append(data.message)
+    #$('#messages').append(data.message)
+    console.log data.message
+    #console.log listMessages
+    $("#word-cloud").empty()
+    drawCloud(data.message)
 
   speak: (message) ->
     @perform 'speak', {message: message}

@@ -34,3 +34,14 @@ $color-grad2: white;
 .fond {
   height: 100px;
 }
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  #title {
+    text-align: center;
+    color: red;
+    font-size: 200%;
+  }
+}

@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 /* variables */
-$color-grad1: #C8E6C9;
+$color-grad1: #66BB6A;
 $color-grad2: white;
 
 .text-zone {
@@ -41,7 +41,7 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
   #title {
     text-align: center;
-    color: red;
+    color: white;
     font-size: 200%;
   }
 }

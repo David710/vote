@@ -1,0 +1,36 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* variables */
+$color-grad1: #C8E6C9;
+$color-grad2: white;
+
+.text-zone {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* largeur obligatoire pour être centré */
+  padding-top: 10%;
+}
+
+#message {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid $color-grad1
+}
+
+#title {
+  text-align: center;
+  color: white;
+}
+
+#grad {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($color-grad1, $color-grad2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($color-grad1, $color-grad2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($color-grad1, $color-grad2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($color-grad1, $color-grad2); /* Standard syntax */
+}
+
+.fond {
+  height: 500px;
+}

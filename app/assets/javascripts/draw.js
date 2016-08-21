@@ -417,7 +417,7 @@ drawCloud = function(messageList) {
       .padding(5)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
       .font("Impact")
-      .fontSize(function(d) { return (20 + (d.size)*25); })
+      .fontSize(function(d) { return (30 + (d.size)*30); })
       .on("end", draw);
 
       layout.start();

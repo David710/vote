@@ -18,8 +18,8 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
     drawCloud(data.message)
     color_word = @getColor()
     $("#word-alone").css("color" , color_word)
-    $("#word-alone").html("hello").delay(2000).fadeIn(1000).delay(2000).fadeOut(1000)
-    $("#word-cloud").fadeOut(1000).delay(5000).fadeIn(1000)
+    $("#word-alone").html(data.last_message).fadeIn(1000).delay(2000).fadeOut(1000)
+    $("#word-cloud").fadeOut(1000).delay(4000).fadeIn(1000)
 
   speak: (message) ->
     @perform 'speak', {message: message}

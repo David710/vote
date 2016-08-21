@@ -31,6 +31,6 @@ class AvisChannel < ApplicationCable::Channel
       puts list_message
       puts list_message.class
 
-      ActionCable.server.broadcast 'avis', message: list_message.as_json
+      ActionCable.server.broadcast 'avis', message: list_message.as_json ,last_message: data['message']
   end
 end

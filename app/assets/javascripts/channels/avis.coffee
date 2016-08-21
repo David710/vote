@@ -12,11 +12,21 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    #$('#messages').append(data.message)
-    console.log data.message
-    #console.log listMessages
+
     $("#word-cloud").empty()
+
     drawCloud(data.message)
+    color_word = @getColor()
+    $("#word-alone").css("color" , color_word)
+    $("#word-alone").html("hello").delay(2000).fadeIn(1000).delay(2000).fadeOut(1000)
+    $("#word-cloud").fadeOut(1000).delay(5000).fadeIn(1000)
 
   speak: (message) ->
     @perform 'speak', {message: message}
+
+  getColor: () ->
+    colors = ["red", "blue", "yellow", "green"]
+    indice = Math.random() * 4
+    indice_entier = Math.round(indice)
+    console.log colors[indice_entier]
+    return colors[indice_entier]

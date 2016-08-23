@@ -35,6 +35,11 @@ $color-grad2: white;
   height: 30px;
 }
 
+#error_message {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
 
 @media only screen
 and (min-device-width : 320px)

@@ -3,6 +3,7 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
     # Called when the subscription is ready for use on the server
     $(document).on 'keypress', '#message', (event) =>
       if event.keyCode is 13
+        @validations(event.target.value)
         @speak(event.target.value)
         event.target.value = ""
         event.preventDefault()
@@ -19,7 +20,7 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
     color_word = @getColor()
     $("#word-alone").css("color" , color_word)
     $("#word-alone").html(data.last_message).fadeIn(1000).delay(2000).fadeOut(1000)
-    $("#word-cloud").fadeOut(1000).delay(4000).fadeIn(1000)
+    $("#word-cloud").fadeOut(1000).delay(3000).fadeIn(1000)
 
   speak: (message) ->
     @perform 'speak', {message: message}
@@ -28,5 +29,15 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
     colors = ["red", "blue", "yellow", "green"]
     indice = Math.random() * 4
     indice_entier = Math.round(indice)
-    console.log colors[indice_entier]
     return colors[indice_entier]
+
+  validations: (text) ->
+    console.log text
+    $("#error_message").empty()
+    if text == ""
+      $("#error_message").html("entrez un message non vide")
+    else
+      if text.length > 30
+        $("#error_message").html("pas plus de 30 caractères")
+      else
+        true

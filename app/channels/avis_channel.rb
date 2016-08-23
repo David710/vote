@@ -9,12 +9,13 @@ class AvisChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    if Message.exists?(text: data['message'])
-      updated_message = Message.find_by(text: data['message'])
+    treated_message = data['message'].downcase 
+    if Message.exists?(text: treated_message)
+      updated_message = Message.find_by(text: treated_message)
       updated_message.size = updated_message.size + 1
       updated_message.save
     else
-      message = Message.create(text: data['message'], size: 1)
+      message = Message.create(text: treated_message, size: 1)
       #ActionCable.server.broadcast 'avis', message: message.text
     end
 
@@ -32,6 +33,6 @@ class AvisChannel < ApplicationCable::Channel
       puts list_message.class
 
       ActionCable.server.broadcast 'avis', message: list_message.as_json ,
-      last_message: data['message']
+      last_message: treated_message
   end
 end

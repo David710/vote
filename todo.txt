@@ -1,5 +1,9 @@
+A FAIRE -----------------------------------
+
+permettre d'ajouter un titre
+
+FAIT ----------------------------------------
+
 ajouter une validation sur la présence ou non de message
 ajouter une validation sur le nombre de caracteres
-sanitisé les messsages
 enlever les majuscules des messages
-permettre d'ajouter un titre

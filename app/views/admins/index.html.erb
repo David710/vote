@@ -1,4 +1,18 @@
-<h1>Admin panel</h1>
-<button type="button" name="button"><%= link_to 'Delete database', admin_delete_path,
-									              method: :delete,
-									              data: { confirm: 'Are you sure?' }, id: 'delete-database-button' %></button>
+<div class="container">
+	<h1>Admin panel</h1>
+	<button type="button" name="button"><%= link_to 'Delete database', admin_delete_path,
+										              method: :delete,
+										              data: { confirm: 'Are you sure?' }, id: 'delete-database-button' %></button>
+
+
+	<h3>modification du header</h3>
+	<%= form_for :header , url: admin_update_path do |f| %>
+	  <p>
+	    <%= f.label :title %><br>
+	    <%= f.text_area :title %>
+	  </p>
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+</div>

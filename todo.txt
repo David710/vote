@@ -1,9 +1,12 @@
 A FAIRE -----------------------------------
 
-permettre d'ajouter un titre
+Ajouter un effet sonore à la reception des messages
+régler les temps d'affichage et la taille des polices
+choisir la couleur
 
 FAIT ----------------------------------------
 
 ajouter une validation sur la présence ou non de message
 ajouter une validation sur le nombre de caracteres
 enlever les majuscules des messages
+permettre d'ajouter un titre

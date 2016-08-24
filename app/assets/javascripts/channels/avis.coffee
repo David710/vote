@@ -19,8 +19,11 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
     drawCloud(data.message)
     color_word = @getColor()
     $("#word-alone").css("color" , color_word)
-    $("#word-alone").html(data.last_message).fadeIn(1000).delay(2000).fadeOut(1000)
-    $("#word-cloud").fadeOut(1000).delay(3000).fadeIn(1000)
+    snd = new Audio('/assets/ooweep.mp3')
+    snd.play()
+    $("#word-alone").html(data.last_message).fadeIn(1000).delay(1000).fadeOut(1000)
+    #$("#word-cloud").fadeOut(1000).delay(3000).fadeIn(1000)
+    $("#word-cloud").fadeIn(1000)
 
   speak: (message) ->
     @perform 'speak', {message: message}

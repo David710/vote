@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 /* variables */
-$color-grad1: #D81B60;
+$color-grad1: #14316B;
 $color-grad2: white;
 
 .text-zone {
@@ -29,6 +29,7 @@ $color-grad2: white;
     background: -o-linear-gradient($color-grad1, $color-grad2); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient($color-grad1, $color-grad2); /* For Firefox 3.6 to 15 */
     background: linear-gradient($color-grad1, $color-grad2); /* Standard syntax */
+    background-image:url('/assets/fond.jpg');
 }
 
 .fond {

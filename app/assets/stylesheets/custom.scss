@@ -30,7 +30,7 @@ $color-grad2: white;
     background: -moz-linear-gradient($color-grad1, $color-grad2); /* For Firefox 3.6 to 15 */
     background: linear-gradient($color-grad1, $color-grad2); /* Standard syntax */
     // background-image:url('http://goodies.pcastuces.com/vignettes/4509_l.jpg');
-    background-image:url('/assets/fond5.jpg');
+    background-image:url('/assets/fond7.png');
 }
 
 .fond {
@@ -41,6 +41,20 @@ $color-grad2: white;
   color: red;
   font-size: 20px;
   text-align: center;
+}
+
+#buttoncloud {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#okbutton {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+#cloudlink {
+  color: white;
 }
 
 @media only screen

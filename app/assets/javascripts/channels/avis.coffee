@@ -8,6 +8,13 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
         event.target.value = ""
         event.preventDefault()
 
+    $( "#okbutton" ).on 'click', (event) =>
+      $message = $('#message').val()
+      @validations($message)
+      @speak($message)
+      $message = ""
+
+
   disconnected: ->
     # Called when the subscription has been terminated by the server
 

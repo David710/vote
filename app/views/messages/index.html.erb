@@ -12,15 +12,19 @@
     <div class="col-md-2 .col-sm-2 col-xs-1"> </div>
     <div class="col-md-8 .col-sm-8 col-xs-10">
       <div class="text-zone">
-        <textarea id="message" placeholder="Ecrivez votre message puis appuyez sur entrée"></textarea>
+        <textarea id="message" placeholder="Ecrivez un mot pour Sandrine puis appuyez sur entrée ou clickez ok"></textarea>
+        <button id="okbutton" class="btn btn-default">OK</button>
       </div>
     </div>
     <div class="col-md-2 .col-sm-2 col-xs-1"> </div>
   </div>
 
   <div class="row fond">
-    <div class="col-md-12 .col-sm-12 col-xs-12">
+    <div class="col-md-2 .col-sm-2 col-xs-1"> </div>
+    <div class="col-md-8 .col-sm-8 col-xs-10">
+      <button class="btn btn-primary" id="buttoncloud"><%= link_to "Voir le nuage", avis_path, id: "cloudlink" %></button>
     </div>
+    <div class="col-md-2 .col-sm-2 col-xs-1"> </div>
   </div>
 
   <div class="row">

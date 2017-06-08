@@ -8,11 +8,11 @@ App.avis = App.cable.subscriptions.create "AvisChannel",
         event.target.value = ""
         event.preventDefault()
 
-    $( "div #okbutton" ).on 'click', (event) =>
+    $(document).on 'click', '#okbutton' , (event) =>
       $message = $('#message').val()
       @validations($message)
       @speak($message)
-      $message = ""
+      $('#message').val("")
 
 
   disconnected: ->

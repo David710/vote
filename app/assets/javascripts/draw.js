@@ -412,7 +412,7 @@ drawCloud = function(messageList) {
   var fill = d3.scale.category20();
 
   var layout = d3.layout.cloud()
-      .size([900, 800])
+      .size([1900, 1900]) //900 x 800
       .words(frequency_list)
       .padding(5)
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
